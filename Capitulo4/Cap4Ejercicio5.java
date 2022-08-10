@@ -20,32 +20,32 @@ import java.util.Scanner;
 
 public class Cap4Ejercicio5 {
     public static void main(String[] args) {
-        // instanciamos scanner
-        Scanner entrada = new Scanner(System.in);
+        try (// instanciamos scanner
+                Scanner entrada = new Scanner(System.in)) {
 
-        // establecemos variables
+            // establecemos variables
+            Double a;
+            Double b;
+            Double resultado;
 
-        Double a;
-        Double b;
-        Double resultado;
+            // pedimos datos
+            System.out.println("Ingrese Valor de a: ");
 
-        // pedimos datos
-        System.out.println("Ingrese Valor de a: ");
+            a = entrada.nextDouble();
 
-        a = entrada.nextDouble();
+            System.out.println("Ingrese el valor de b: ");
 
-        System.out.println("Ingrese el valor de b: ");
+            b = entrada.nextDouble();
 
-        b = entrada.nextDouble();
+            // establecemos condicion y realizamos calculos
 
-        // establecemos condicion y realizamos calculos
+            if (a == 0 || b == 0) {
+                System.out.println("Con estos valores la ecuacion es indeterminada. no tiene valor real.");
+            } else {
+                resultado = (-b / a);
 
-        if (a == 0 || b == 0) {
-            System.out.println("Con estos valores la ecuacion es indeterminada. no tiene valor real.");
-        } else {
-            resultado = (-b / a);
-
-            System.out.println("Solucion: " + resultado);
+                System.out.println("Solucion: " + resultado);
+            }
         }
 
     }
